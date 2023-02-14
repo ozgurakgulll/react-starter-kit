@@ -2,6 +2,7 @@ import TodoItem from "./TodoItem";
 import {memo} from "react";
 
 function Todos({todos}){
+    console.log('Rander Todo')
 return (
     <ul>
         {

@@ -1,3 +1,5 @@
+import {memo} from "react";
+
 function AddTodo({submitHandle,onChange,todo}){
 
     return(
@@ -6,4 +8,4 @@ function AddTodo({submitHandle,onChange,todo}){
         <button disabled={!todo} type="submit" >Ekle</button>
     </form>)
 }
-export default AddTodo
+export default memo(AddTodo)
