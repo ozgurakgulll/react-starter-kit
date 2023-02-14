@@ -1,12 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './tailwind.css'
+import Test from './components/test'
+import {useState} from "react";
+import Ders6 from "./components/Ders6";
+import Ders7 from "./components/Ders7";
+import Header from "./components/Header";
 function App() {
-  return (
-    <div className="App">
-     <img src="/logo512.png"/>
-        
-    </div>
+    // const [show,setShow]=useState(false)
+    return (
+        <>
+            <Header/>
+         <div className="d-flex">
+             <Ders7/>
+         </div>
+
+        {/*<button onClick={()=>setShow(show=>!show)}> {show ? 'gizle':'göster'}</button>*/}
+
+        {/*    {show &&<Test/>}*/}
+
+        </>
   );
 }
 
