@@ -1,9 +1,24 @@
-import {memo} from "react";
+import SwitchTheme from "./SwitchTheme";
+import SwitchLanguage from "./SwitchLanguage";
+import {useAuth} from "./context";
 
-function Header(){
-    console.log('header rendered')
-return(
-    <header>Header</header>
-)
+export default function Header(){
+    const {user,setUser}=useAuth()
+    const login=()=>{
+        setUser({
+            name:'tayfun',
+            id:1
+        })
+    }
+    const logout=()=>{
+        setUser(false)
+    }
+    return(
+        <header>
+            Header <br/>
+            {user && <button onClick={logout}>  Giriş Yap</button> || <button onClick={login}>Çıkış Yap</button>}
+            <SwitchTheme />
+            <SwitchLanguage />
+        </header>
+    )
 }
-  export default memo(Header)
