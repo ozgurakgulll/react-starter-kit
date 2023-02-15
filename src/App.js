@@ -1,16 +1,24 @@
-import Home from "./components/Home";
-import SiteProvider from "./components/context/SiteContext";
-import AuthProvider from "./components/context/AuthContext";
+import {getPosts,getPostDetail,newPost} from "./services"
+import {useEffect} from "react";
+
 function App() {
 
+    useEffect(
+        ()=> {
+            getPosts().then(res=>console.log(res))
+            getPostDetail(2).then(res=>console.log(res))
+            newPost({
+                userId:3,
+                title:'test',
+                body:'test'
+            }).then(res=>console.log(res))
+        }
+    )
+
     return (
-        <>
-            <SiteProvider>
-                <AuthProvider>
-                   <Home/>
-                </AuthProvider>
-            </SiteProvider>
-        </>
+     <>
+         App
+     </>
   );
 }
 
